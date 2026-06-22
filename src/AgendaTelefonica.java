@@ -3,8 +3,12 @@ import java.util.Arrays;
 
 public class AgendaTelefonica {
 
-    Contacto list[] = new Contacto[10];
-    int numeroDeContacto;
+    private Contacto list[] = new Contacto[10];
+    //String numeroDeContacto;
+
+    public Contacto[] getList() {
+        return list;
+    }
 
     //Lizeth
     public boolean existeContacto(Contacto c){
@@ -83,21 +87,40 @@ public class AgendaTelefonica {
 
     }// buscaContacto
 
+    //PARA ELIMINAR CONTACTO
+    public Contacto buscaContc(String nombre, String apellido){
+
+        return Arrays.stream(list)
+                .filter(contact -> contact != null)
+                .filter(contact ->
+                        contact.getNombre().equals(nombre) &&
+                                contact.getApellido().equals(apellido))
+                .findFirst()
+                .orElse(null);
+
+    }
+
     //Jesus
     public void eliminarContacto(Contacto c){
-        for (int i =0;i < list.length;i++){
-            if(list[i] != null && list[i].equals(c)) {
 
-                for (int j = i; j < list.length - 1; j++) {
-                    list[j] = list[j + 1];
-                }//for (recorre contactos)
-                list[list.length - 1] = null;
-                System.out.println("El contacto " + c.getNombre() + " se elimino correctamente de la agenda");
-                this.numeroDeContacto--; //TODO Modificar en base a variable de registro
-                return;
-            }//if
-        }//for (recorre el arreglo)
-        System.out.println("El contacto " + c.getNombre() +" no se encuentra en la  agenda");
+        if(c!=null) {
+            for (int i = 0; i < list.length; i++) {
+                if (list[i] != null && list[i].equals(c)) {
+
+                    for (int j = i; j < list.length - 1; j++) {
+                        list[j] = list[j + 1];
+                    }//for (recorre contactos)
+                    list[list.length - 1] = null;
+                    System.out.println("El contacto " + c.getNombre() + " se elimino correctamente de la agenda");
+                    //this.numeroDeContacto--; //TODO Modificar en base a variable de registro
+                    return;
+                }//if
+            }//for (recorre el arreglo)
+        }
+        else{
+
+            System.out.println("El contacto no se encuentra en la  agenda");
+        }
 
     }//eliminarContacto
 
@@ -106,8 +129,8 @@ public class AgendaTelefonica {
         for (int i = 0 ; i < list.length ; i++) {
 
                  if (list[i] != null && list[i].getNombre().equals(nombre) && list[i].getApellido().equals(apellido) ) {
-                    int nuevoTel = Integer.parseInt(nuevoTelefono);
-                    list[i].setTelefono(nuevoTel);
+                    //String nuevoTel = Double.parseDouble(nuevoTelefono);
+                    list[i].setTelefono(nuevoTelefono);
                     System.out.println("Número de telefono modificado");
                     return;
                  }// if

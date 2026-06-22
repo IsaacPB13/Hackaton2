@@ -35,7 +35,7 @@ public class Main {
                     System.out.print("Introduce el apellido: ");
                     String apeAñadir = sn.nextLine();
                     System.out.print("Introduce el teléfono (solo números): ");
-                    int telAñadir = Integer.parseInt(sn.nextLine());
+                    String telAñadir = sn.nextLine();
 
                     Contacto nuevoContacto = new Contacto(nomAñadir, apeAñadir, telAñadir);
                     agenda.añadirContacto(nuevoContacto);
@@ -62,8 +62,8 @@ public class Main {
                     System.out.print("Introduce el apellido del contacto a eliminar: ");
                     String apeEliminar = sn.nextLine();
 
-                    Contacto contactoAEliminar = new Contacto(nomEliminar, apeEliminar, 0);
-                    agenda.eliminarContacto(contactoAEliminar);
+                    Contacto contacto = agenda.buscaContc(nomEliminar, apeEliminar); //Contacto contactoAEliminar = new Contacto(nomEliminar, apeEliminar, "");
+                    agenda.eliminarContacto(contacto);
                     break;
 
                 case 5:
