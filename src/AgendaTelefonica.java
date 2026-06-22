@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AgendaTelefonica {
@@ -12,8 +13,17 @@ public class AgendaTelefonica {
 
     //Erick
     public void listarContactos(){
+        ArrayList<String> nombres = new ArrayList<>();
+        for(int i = 0 ; i<list.length ; i++){
+            if(list[i]!= null){
+                nombres.add(list[i].getNombre() + " " + list[i].getApellido() + " - " + list[i].getTelefono());
+            }
 
-
+        }
+        nombres.sort(null);
+        for (String nom: nombres){
+            System.out.println(nom);
+        }
     }
 
     //Ivonne
@@ -38,8 +48,18 @@ public class AgendaTelefonica {
 
     //Michael
     public void modificarTelefono(String nombre, String apellido, String nuevoTelefono){
+        for (int i = 0 ; i < list.length ; i++)
+        {
 
-
+                 if (list[i] != null && list[i].getNombre().equals(nombre) && list[i].getApellido().equals(apellido) )
+                 {
+                    int nuevoTel = Integer.parseInt(nuevoTelefono);
+                    list[i].setTelefono(nuevoTel);
+                    System.out.println("Número de telefono modificado");
+                    return;
+                 }
+        }
+        System.out.println("No existe el contacto");
     }
 
     //Isaac
