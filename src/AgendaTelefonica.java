@@ -23,6 +23,10 @@ public class AgendaTelefonica {
         return list;
     }
 
+    public void setList(Contacto[] list) {
+        this.list = list;
+    }
+
     //Lizeth
     public boolean existeContacto(Contacto c){
 
