@@ -28,6 +28,12 @@ public class Contacto {
         this.telefono = telefono;
     }
 
+    public Contacto(String nombre, String apellido, int telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+    }
+
     @Override
     public String toString() {
         return "Contacto{" +
