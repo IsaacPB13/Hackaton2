@@ -33,14 +33,32 @@ public class AgendaTelefonica {
     }
 
     //Isaac
-    public void agendaLlena(){
+    public boolean agendaLlena(){
 
+        boolean lleno = true;
+        for(int i=0; i<list.length; i++){
 
+            if(list[i]==null){
+
+                lleno = false;
+                break;
+            }
+        }
+
+        return lleno;
     }
 
     //Isaac
-    public void espacioLibres(){
+    public void espaciosLibres(){
 
+        int espacios=0;
+        for(int i=0; i<list.length; i++){
 
+            if(list[i]==null){
+
+                espacios+=1;
+            }
+        }
+        System.out.println("Espacios libres en la agenda: "+espacios);
     }
 }
