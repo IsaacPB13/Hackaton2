@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AgendaTelefonica {
@@ -12,8 +13,17 @@ public class AgendaTelefonica {
 
     //Erick
     public void listarContactos(){
+        ArrayList<String> nombres = new ArrayList<>();
+        for(int i = 0 ; i<list.length ; i++){
+            if(list[i]!= null){
+                nombres.add(list[i].getNombre() + " " + list[i].getApellido() + " - " + list[i].getTelefono());
+            }
 
-
+        }
+        nombres.sort(null);
+        for (String nom: nombres){
+            System.out.println(nom);
+        }
     }
 
     //Ivonne
