@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class AgendaTelefonica {
 
     Contacto list[] = new Contacto[10];
+    int numeroDeContacto;
 
     //Lizeth
     public void existeContacto(Contacto c){
@@ -42,9 +43,21 @@ public class AgendaTelefonica {
 
     //Jesus
     public void eliminarContacto(Contacto c){
+        for (int i =0;i < list.length;i++){
+            if(list[i] != null && list[i].equals(c)) {
 
+                for (int j = i; j < list.length - 1; j++) {
+                    list[j] = list[j + 1];
+                }//for (recorre contactos)
+                list[list.length - 1] = null;
+                System.out.println("El contacto " + c.getNombre() + " se elimino correctamente de la agenda");
+                this.numeroDeContacto--; //TODO Modificar en base a variable de registro
+                return;
+            }//if
+        }//for (recorre el arreglo)
+        System.out.println("El contacto " + c.getNombre() +" no se encuentra en la  agenda");
 
-    }
+    }//eliminarContacto
 
     //Michael
     public void modificarTelefono(String nombre, String apellido, String nuevoTelefono){
