@@ -1,3 +1,5 @@
+package org.agenda;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -63,7 +65,7 @@ public class AgendaTelefonica {
 
                 if (list[i] == null) {
                     list[i] = c;
-                    System.out.println("Contacto añadido");
+                    System.out.println("org.agenda.Contacto añadido");
                     return true;
                 }// if
             }// for
@@ -184,4 +186,4 @@ public class AgendaTelefonica {
         }// for
         System.out.println("Espacios libres en la agenda: "+espacios);
     }// espaciosLibres
-}// class AgendaTelefonica
+}// class org.agenda.AgendaTelefonica

@@ -1,3 +1,6 @@
+import org.agenda.AgendaTelefonica;
+import org.agenda.Contacto;
+
 import java.util.Scanner;
 
 public class Main {
@@ -67,7 +70,7 @@ public class Main {
                     System.out.print("Introduce el apellido del contacto a eliminar: ");
                     String apeEliminar = sn.nextLine();
 
-                    Contacto contacto = agenda.buscaContc(nomEliminar, apeEliminar); //Contacto contactoAEliminar = new Contacto(nomEliminar, apeEliminar, "");
+                    Contacto contacto = agenda.buscaContc(nomEliminar, apeEliminar); //org.agenda.Contacto contactoAEliminar = new org.agenda.Contacto(nomEliminar, apeEliminar, "");
                     agenda.eliminarContacto(contacto);
                     break;
 

@@ -1,3 +1,5 @@
+package org.agenda;
+
 public class Contacto {
 
     private String nombre;
@@ -49,7 +51,7 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto{" +
+        return "org.agenda.Contacto{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", telefono=" + telefono +
