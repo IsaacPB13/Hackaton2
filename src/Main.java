@@ -37,9 +37,14 @@ public class Main {
                     System.out.print("Introduce el teléfono (solo números): ");
                     String telAñadir = sn.nextLine();
 
-                    Contacto nuevoContacto = new Contacto(nomAñadir, apeAñadir, telAñadir);
-                    agenda.añadirContacto(nuevoContacto);
-                    break;
+                    try {
+                        Contacto nuevoContacto = new Contacto(nomAñadir, apeAñadir, telAñadir);
+                        agenda.añadirContacto(nuevoContacto);
+                        break;
+                    } catch (IllegalArgumentException e){
+
+                        System.out.println("ERROR. Ingresa un número válido.");
+                    }
 
                 case 2:
                     System.out.println("\n--- Lista de Contactos ---");
@@ -73,8 +78,14 @@ public class Main {
                     String apeModificar = sn.nextLine();
                     System.out.print("Introduce el nuevo teléfono: ");
                     String nuevoTel = sn.nextLine();
+                    try{
 
-                    agenda.modificarTelefono(nomModificar, apeModificar, nuevoTel);
+                        agenda.modificarTelefono(nomModificar, apeModificar, nuevoTel);
+                    }
+                    catch (IllegalArgumentException e){
+
+                        System.out.println("ERROR. Ingresa un número válido.");
+                    }
                     break;
 
                 case 6:

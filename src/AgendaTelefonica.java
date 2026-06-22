@@ -4,7 +4,20 @@ import java.util.Arrays;
 public class AgendaTelefonica {
 
     private Contacto list[] = new Contacto[10];
-    //String numeroDeContacto;
+    //Contactos de prueba
+    public AgendaTelefonica(){
+
+        list[0] = new Contacto("John", "Doe", "1234567890");
+        list[1] = new Contacto("Mary", "Smith", "9876543210");
+        list[2] = new Contacto("Peter", "Jones", "5551234567");
+        list[3] = new Contacto("Ana", "Lopez", "4421234567");
+        list[4] = new Contacto("Carlos", "Garcia", "5512345678");
+        list[5] = new Contacto("Laura", "Martinez", "3312345678");
+        list[6] = new Contacto("David", "Brown", "6671234567");
+        list[7] = new Contacto("Sofia", "Hernandez", "8112345678");
+        list[8] = new Contacto("Michael", "Wilson", "7221234567");
+        list[9] = new Contacto("Emma", "Taylor", "9991234567");
+    }
 
     public Contacto[] getList() {
         return list;
