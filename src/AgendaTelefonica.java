@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class AgendaTelefonica {
 
     Contacto list[] = new Contacto[10];
@@ -15,8 +17,16 @@ public class AgendaTelefonica {
     }
 
     //Ivonne
-    public void buscaContacto(String nombre, String apellido){
+    public String buscaContacto(String nombre, String apellido){
 
+        return Arrays.stream(list)
+                .filter(contact -> contact != null)
+                .filter(contact ->
+                        contact.getNombre().equals(nombre) &&
+                                contact.getApellido().equals(apellido))
+                .findFirst()
+                .map(contact -> String.valueOf(contact.getTelefono()))
+                .orElse("Not Found");
 
     }
 
